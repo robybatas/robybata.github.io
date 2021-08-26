@@ -144,7 +144,6 @@ class Controller{
 
         Restaurant.findByPk(id)
         .then(data => {
-            console.log(data, "<<<< ini data \n")
             res.render('addRestaurantFood.ejs', {
                 data,
                 foodList
@@ -162,13 +161,18 @@ class Controller{
 
     static addRestaurantFoodPost(req, res){
         const id = +req.params.id
-        const { FoodId, price } = req.body
-        console.log(req.body)
-        RestaurantFood.create({price, createdAt: new Date(), updatedAt: new Date(), FoodId, RestaurantId:id })
-        .then(_ => {
-            res.redirect(`/restaurant/food/${id}`)
-        })
-        .catch(err => res.send(err.errors[0].message))
+
+       console.log(req.file, "<<< ini req")
+
+        // const images = req.file.path
+
+        // const { FoodId, price } = req.body
+        // console.log(req.body)
+        // RestaurantFood.create({price, createdAt: new Date(), updatedAt: new Date(), FoodId, RestaurantId:id, images})
+        // .then(_ => {
+        //     res.redirect(`/restaurant/food/${id}`)
+        // })
+        // .catch(err => res.send(err.errors[0].message))
         
     }
 
@@ -240,8 +244,14 @@ class Controller{
     }
 
     static showRestaurantMaps(req, res){
-        console.log("sampai controller")
-        res.render('maps.ejs')
+        const id = req.params.id
+
+        Restaurant.findByPk(id)
+        .then(data => {
+            res.render('maps.ejs',{ data })
+        })
+        .catch(err => res.send(err))
+        
     }
     
 }
