@@ -1,0 +1,17 @@
+
+<%- include('partials/navbar.ejs')%>
+<header>
+    <h1>Edit Food</h1>
+    <a href="/food">All Food</a>
+</header>
+<form action="/food/edit/<%= data.id %>" method="POST">
+<label style="margin: 10px">Food Name</label><br/>
+<input style="margin: 10px" name="food_name" value="<%= data.food_name %>" /><br/>
+
+
+<input type="submit"  style="margin: 10px" /><br/>
+
+</form>
+
+</body>
+</html>

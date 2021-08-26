@@ -1,0 +1,23 @@
+<%- include('partials/navbar.ejs')%>
+    <header>
+        <h1>Add Food to <%=data.restaurant_name%></h1>
+        <a href="/">Show All Restaurant</a>
+    </header>
+  <form action="/restaurant/addFood/<%=data.id%>" method="POST">
+    <label>Food</label><br/>
+    <select name="FoodId">
+        <option default selected disabled>--Select Food--</option>
+        <% foodList.forEach(item=>{%>
+            <option value="<%= item.id %>"><%= item.food_name %></option>  
+        <%})%>
+      </select></br>
+    <label>Price</label><br/>
+    <input name="price" /><br/>
+    <input type="submit" value="Submit!" /><br/>
+
+
+  </form>
+
+  </form>
+</body>
+</html>

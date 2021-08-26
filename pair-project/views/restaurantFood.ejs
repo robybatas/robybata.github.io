@@ -1,0 +1,23 @@
+<%- include('partials/navbar.ejs')%>
+    <header>
+        <h1>Foods in <%=data.restaurant_name%></h1>
+        <a href="/">Show All Restaurant</a>
+    </header>
+ 
+ <table >
+        <tr >
+            <th>Food</th>
+            <th>Price</th>
+          </tr>
+        <% data.Food.forEach(item =>{ %>
+            <tr>
+                <td><%= item.food_name %></td>
+                <% priceList.forEach(element =>{ %>
+                    <%if(element.dataValues.RestaurantId == data.id && element.dataValues.FoodId == item.id) {%>
+                        <td><%= element.dataValues.price  %></td>
+                <%} } )%>
+              </tr>
+        <% } )%>
+    </table>
+</body>
+</html>
