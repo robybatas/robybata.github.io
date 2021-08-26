@@ -1,0 +1,25 @@
+<%- include('partials/navbar.ejs')%>
+    <header style="width:80%">
+        <h1>Restaurant List</h1>
+        <a href="/restaurant/add">Add Restaurant</a>
+      </header>
+    <table style="width:80%">
+        <tr >
+            <th>Name</th>
+            <th>Addres</th>
+            <th>Type</th> 
+            <th>Action</th>
+            <th> Maps </th> 
+          </tr>
+        <% data.forEach(item =>{ %>
+            <tr>
+                <td><%= item.restaurant_name %></td>
+                <td><%= item.restaurant_address  %></td>
+                <td><%= item.restaurant_type %></td>
+                <td><a href="/restaurant/edit/<%=item.id%>">Edit</a> | <a href="/restaurant/delete/<%=item.id%>">delete</a> |<a href="/restaurant/addFood/<%=item.id%>">Add Food</a>|<a href="/restaurant/food/<%=item.id%>">Show Food</a></td>
+                <td><a class="btn btn-success" href="/restaurant/maps/<%=item.id%>" role="button">Show Maps</a></td>
+              </tr>
+        <% } )%>
+    </table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<%- include('partials/navbar.ejs')%>
+    <header>
+        <h1>Edit Restaurant</h1>
+        <a href="/">Show All Restaurant</a>
+    </header>
+  <form action="/restaurant/edit/<%= data.id %>" method="POST">
+    <label>Name</label><br/>
+    <input name="restaurant_name" value="<%= data.restaurant_name %>" /><br/>
+    <label>Address</label><br/>
+    <input name="restaurant_address" value="<%= data.restaurant_address %>" /><br/>
+    <label>Type</label><br/>
+    <select name="restaurant_type">
+      <option default selected><%= data.restaurant_type %></option>
+	  <% if(data.restaurant_type != "Bakmi") {%>
+		<option>Bakmi</option>
+	  <%}%>
+	  <% if(data.restaurant_type != "Nasi") {%>
+		<option>Nasi</option>
+	  <%}%>
+	  <% if(data.restaurant_type != "Kopi") {%>
+		<option>Kopi</option>
+	  <%}%>
+	  <% if(data.restaurant_type != "Fast Food") {%>
+		<option>Fast Food</option>
+	  <%}%>
+     
+    </select></br>
+    <input type="submit" value="Submit!" /><br/>
+
+  </form>
+
+  </form>
+</body>
+</html>

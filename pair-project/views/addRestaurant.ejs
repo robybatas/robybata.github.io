@@ -1,0 +1,25 @@
+<%- include('partials/navbar.ejs')%>
+    <header>
+        <h1>Add Restaurant</h1>
+        <a href="/">Show All Restaurant</a>
+    </header>
+  <form action="/restaurant/add" method="POST">
+    <label>Name</label><br/>
+    <input name="restaurant_name" /><br/>
+    <label>Address</label><br/>
+    <input name="restaurant_address" /><br/>
+    <label>Type</label><br/>
+    <select name="restaurant_type">
+      <option default selected disabled>--Select Type--</option>
+      <option>Bakmi</option>
+      <option>Nasi</option>
+      <option>Kopi</option>
+      <option>Fast Food</option>
+    </select></br>
+    <input type="submit" value="Submit!" /><br/>
+
+  </form>
+
+  </form>
+</body>
+</html>

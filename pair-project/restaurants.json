@@ -1,0 +1,12 @@
+[
+    {
+      "restaurant_name": "Bakmi GM",
+      "restaurant_address": "Jl. Gajah Mada",
+      "restaurant_type": "bakmi"
+    },
+    {
+      "restaurant_name": "Nasgor Kebon Sirih",
+      "restaurant_address": "Jl. Kebon Sirih",
+      "restaurant_type": "nasi"
+    }
+]
