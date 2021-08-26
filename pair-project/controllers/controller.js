@@ -1,5 +1,5 @@
 const { Restaurant, Food, RestaurantFood } = require("../models")
-
+const toRupiah = require('../helpers/toRupiah')
 class Controller{
 
     
@@ -194,7 +194,8 @@ class Controller{
         .then(data => {
             res.render('restaurantFood.ejs', {
                 data,
-                priceList
+                priceList,
+                toRupiah
             })
         })
         .catch(err => {

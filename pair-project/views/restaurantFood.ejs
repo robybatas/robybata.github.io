@@ -14,7 +14,7 @@
                 <td><%= item.food_name %></td>
                 <% priceList.forEach(element =>{ %>
                     <%if(element.dataValues.RestaurantId == data.id && element.dataValues.FoodId == item.id) {%>
-                        <td><%= element.dataValues.price  %></td>
+                        <td><%= toRupiah(element.dataValues.price)  %></td>
                 <%} } )%>
               </tr>
         <% } )%>
